@@ -264,7 +264,7 @@ start_heartbeat(#state{sock      = Sock,
     Connection = self(),
     ReceiveFun = fun () -> Connection ! heartbeat_timeout end,
     rabbit_heartbeat:start(
-      Sup, Sock, Name, Heartbeat, SendFun, Heartbeat, ReceiveFun).
+        Sup, Sock, Name, Heartbeat, SendFun, Heartbeat, ReceiveFun).
 
 login(Params = #amqp_params_network{auth_mechanisms = ClientMechanisms,
                                     client_properties = UserProps},
